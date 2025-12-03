@@ -12,6 +12,73 @@ execute:
 
 ### What does the data show?
 
+### Charting all the data points and visualizing the trend with/ without Patrick's presense
+```{python}
+#| echo: false
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset
+data = pd.read_csv("carsFixed.csv")
+
+plt.figure(figsize=(8,5))
+
+# Scatter plot
+plt.scatter(
+    data[data['boss'] == 1]['shopID'],
+    data[data['boss'] == 1]['carsFixed'],
+    color='seagreen',
+    label='Patrick Present',
+    alpha=0.6
+)
+plt.scatter(
+    data[data['boss'] == 0]['shopID'],
+    data[data['boss'] == 0]['carsFixed'],
+    color='yellow',
+    label='Not Present',
+    alpha=0.6
+)
+
+# Compute averages per shop
+avg_with_boss = data[data['boss'] == 1].groupby('shopID')['carsFixed'].mean()
+avg_without_boss = data[data['boss'] == 0].groupby('shopID')['carsFixed'].mean()
+
+# Plot averages as lines
+plt.plot(
+    avg_with_boss.index,
+    avg_with_boss.values,
+    color='seagreen',
+    marker='o',
+    linestyle='-',
+    linewidth=2,
+    label='Average with Patrick'
+)
+plt.plot(
+    avg_without_boss.index,
+    avg_without_boss.values,
+    color='orange',
+    marker='o',
+    linestyle='--',
+    linewidth=2,
+    label='Average without Patrick'
+)
+
+# Customize x-axis labels
+plt.xticks([1, 2, 3, 4, 5], ['Shop 1', 'Shop 2', 'Shop 3', 'Shop 4', 'Shop 5'])
+
+plt.xlabel('Shop')
+plt.ylabel('Number of Cars Fixed')
+plt.title('Cars Fixed by Shop ID with Patrick\'s Presence and Average Comparison')
+plt.legend()
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.show()
+
+```
+
+
+### Visualizing the effect/ delta of Patrick's presense
+
 ```{python}
 #| echo: false
 
@@ -36,10 +103,10 @@ sns.barplot(
     hue="boss",
     palette="Set2"
 )
-plt.title("Average Productivity by Shop and Boss Presence")
+plt.title("Average Productivity by Shop and Patrick's Presence")
 plt.xlabel("Shop ID")
 plt.ylabel("Average Cars Fixed")
-plt.legend(title="Boss Present (1=Yes, 0=No)")
+plt.legend(title="Patrick Present (1=Yes, 0=No)")
 plt.show()
 
 
