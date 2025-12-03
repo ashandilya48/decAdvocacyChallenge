@@ -1,14 +1,23 @@
 ---
 title: "Decision Advocacy Challenge"
 subtitle: "Data-Driven Scheduling for Maximum Productivity"
+author: "Anupam Shandilya"
+date: today
 format:
-  html: default
+  html: 
+    theme: flatly
+    code-fold: true
+    code-summary: "Show code"
+    toc: true
+    toc-depth: 3
+    toc-location: right
 execute:
   echo: true
   eval: true
 ---
 
 ## 🔧 Decision Advocacy Challenge - Patrick's Auto Shop Analysis
+
 
 ### What does the data show?
 
