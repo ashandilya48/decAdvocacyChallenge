@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,58 +20,21 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
 <script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<link href="index_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -102,481 +65,259 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="decision-advocacy-challenge---patricks-auto-shop-analysis" class="level1">
-<h1>🔧 Decision Advocacy Challenge - Patrick’s Auto Shop Analysis</h1>
-<section id="challenge-overview" class="level2">
-<h2 class="anchored" data-anchor-id="challenge-overview">Challenge Overview</h2>
-<p><strong>Your Mission:</strong> Create a concise, punchy Quarto document (aim for 1-5 printed pages) that analyzes historical productivity data from Patrick’s auto shop network. Your report should give Patrick clear, actionable recommendations he can understand and use. Write it so an auto-mechanic can follow it—no jargon, no confusion, no boredom. Then render the document to HTML and deploy it via GitHub Pages.</p>
-<p><strong>Key Requirements:</strong></p>
-<ul>
-<li><strong>Simplicity:</strong> Patrick is an auto-mechanic, not a statistician. Write so he can understand.</li>
-<li><strong>Conciseness:</strong> 1-5 printed pages. Get to the point.</li>
-<li><strong>Beautiful visualizations:</strong> Show all 250 data points clearly.</li>
-<li><strong>Logical recommendations:</strong> Defensible advice based on the data.</li>
-<li><strong>Confidence assessment:</strong> Explain uncertainty in plain terms. We only have 250 days of data—that’s not a lot. Help Patrick understand what ranges of differences he can expect.</li>
-</ul>
-</section>
-<section id="the-business-problem" class="level2">
-<h2 class="anchored" data-anchor-id="the-business-problem">The Business Problem 🎯</h2>
-<p>Patrick runs a network of 5 auto repair shops. He’s been tracking productivity data (number of cars fixed per day) across all shops, along with whether he (the boss) was present at each shop on each day.</p>
-<p><strong>The Core Question:</strong> When and where should Patrick schedule his presence to maximize productivity and revenue?</p>
-<p><strong>Key Considerations:</strong></p>
-<ul>
-<li>Patrick can only be at one shop per day</li>
-<li>Different shops may respond differently to his presence</li>
-<li>Revenue depends on number of cars fixed (assume a fixed price per car)</li>
-<li>Historical patterns may not predict future performance perfectly</li>
-<li>Patrick loves visiting his brother who runs Shop 3</li>
-</ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-🎯 The Key Insight: Data-Driven Decision Making
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>The problem:</strong> Patrick needs to make scheduling decisions based on data, not intuition. He needs to understand:</p>
-<ul>
-<li>Which shops benefit most from his presence?</li>
-<li>Are there patterns by shop that suggest different strategies?</li>
-<li>What are the revenue and profit implications of different scheduling scenarios?</li>
-<li>How confident can he be in these recommendations?</li>
-</ul>
-<p><strong>Why this matters:</strong> Poor scheduling decisions can lead to:</p>
-<ul>
-<li>Wasted time (Patrick at shops that don’t need him)</li>
-<li>Lost revenue (shops that need him but don’t get him)</li>
-</ul>
-<p><strong>The connection:</strong> This is a real-world decision problem where data analysis can directly impact business outcomes. Your job is to make the data tell a clear, actionable story.</p>
-</div>
-</div>
-</section>
-<section id="the-data" class="level2">
-<h2 class="anchored" data-anchor-id="the-data">The Data 📊</h2>
-<p>The dataset contains 250 observations of daily productivity across 5 shops:</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>carsDF.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-data-overview" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Overview of the productivity data
-</figcaption>
-<div aria-describedby="tbl-data-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="2">
+<section id="decision-advocacy-challenge---patricks-auto-shop-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="decision-advocacy-challenge---patricks-auto-shop-analysis">🔧 Decision Advocacy Challenge - Patrick’s Auto Shop Analysis</h2>
+<section id="what-does-the-data-show" class="level3">
+<h3 class="anchored" data-anchor-id="what-does-the-data-show">What does the data show?</h3>
+<div id="5ce04f76" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
 <div>
-
-
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-2-output-1.png" width="659" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="detailed-breakdown-of-productivity-impact" class="level3">
+<h3 class="anchored" data-anchor-id="detailed-breakdown-of-productivity-impact">📊 Detailed Breakdown of Productivity Impact</h3>
+<p>Here’s the comparison of average cars fixed per shop with and without boss presence:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">observation</th>
-<th data-quarto-table-cell-role="th">shopID</th>
-<th data-quarto-table-cell-role="th">boss</th>
-<th data-quarto-table-cell-role="th">carsFixed</th>
+<th>Shop</th>
+<th>Avg. Cars Fixed (No Boss)</th>
+<th>Avg. Cars Fixed (Boss Present)</th>
+<th>Difference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>8</td>
+<td>Shop 4</td>
+<td>36.22</td>
+<td>49.00</td>
+<td>+12.78</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>2</td>
-<td>2</td>
-<td>0</td>
-<td>22</td>
+<td>Shop 2</td>
+<td>22.07</td>
+<td>32.14</td>
+<td>+10.07</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3</td>
-<td>3</td>
-<td>0</td>
-<td>32</td>
+<td>Shop 5</td>
+<td>46.36</td>
+<td>54.58</td>
+<td>+8.22</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>4</td>
-<td>4</td>
-<td>1</td>
-<td>64</td>
+<td>Shop 1</td>
+<td>11.00</td>
+<td>17.95</td>
+<td>+6.95</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>5</td>
-<td>5</td>
-<td>0</td>
-<td>53</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>6</td>
-<td>1</td>
-<td>1</td>
-<td>21</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>7</td>
-<td>2</td>
-<td>0</td>
-<td>20</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>8</td>
-<td>3</td>
-<td>0</td>
-<td>42</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>9</td>
-<td>4</td>
-<td>0</td>
-<td>31</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>10</td>
-<td>5</td>
-<td>0</td>
-<td>55</td>
+<td>Shop 3</td>
+<td>33.06</td>
+<td>36.00</td>
+<td>+2.94</td>
 </tr>
 </tbody>
 </table>
-
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<p><strong>Data Dictionary:</strong></p>
+<blockquote class="blockquote">
+<p>The shops that benefit most from the boss’s presence are <strong><em>Shop 4</em></strong> (+12.78 cars fixed) and <strong><em>Shop 2</em></strong> (+10.07). Shops that benefit moderately are <strong><em>Shop 5</em></strong> (+8.22) and <strong><em>Shop 1</em></strong> (+6.95). <strong><em>Shop 3</em></strong> shows only a small improvement (+2.94), meaning boss presence has little impact there compared to others.</p>
+</blockquote>
+</section>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">🔎 Interpretation</h3>
 <ul>
-<li><code>observation</code>: Observation number (1-250)</li>
-<li><code>shopID</code>: Shop identifier (1-5)</li>
-<li><code>boss</code>: Binary indicator (0 = boss absent, 1 = boss present)</li>
-<li><code>carsFixed</code>: Number of cars fixed that day</li>
+<li><strong>Shop 4:</strong> The strongest effect. Productivity jumps significantly when the boss is present, suggesting supervision or leadership has a major motivational or organizational impact here.</li>
+<li><strong>Shop 2:</strong> Also shows a large boost, indicating workers respond well to oversight.</li>
+<li><strong>Shop 5:</strong> Gains are moderate but consistent, meaning boss presence helps but isn’t transformative.</li>
+<li><strong>Shop 1:</strong> Modest improvement, but still noticeable given its lower baseline productivity.</li>
+<li><strong>Shop 3:</strong> Barely affected. This shop seems to operate steadily regardless of whether the boss is present, which could imply strong self-management or less reliance on direct supervision.</li>
 </ul>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> carsDF.groupby([<span class="st">'shopID'</span>, <span class="st">'boss'</span>])[<span class="st">'carsFixed'</span>].agg([<span class="st">'count'</span>, <span class="st">'mean'</span>, <span class="st">'std'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>]).<span class="bu">round</span>(<span class="dv">2</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-data-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Summary statistics by shop and boss presence
-</figcaption>
-<div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div>
-
-
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+</section>
+<section id="strategic-insights" class="level3">
+<h3 class="anchored" data-anchor-id="strategic-insights">💡 Strategic Insights</h3>
+<ul>
+<li><strong>High-impact shops (4 &amp; 2):</strong> Patrick’s presence should be prioritized here if resources are limited, as it yields the largest productivity gains.</li>
+<li><strong>Moderate-impact shops (5 &amp; 1):</strong> Patrick’s presence helps, but improvements are smaller. These shops might benefit more from process optimization or incentives rather than supervision alone.</li>
+<li><strong>Low-impact shop (3):</strong> Since Patrick’s presence doesn’t change much, this shop may already have strong internal discipline or systems. The boss’s time might be better spent elsewhere.</li>
+</ul>
+</section>
+<section id="recommendations-where-patrick-should-focus" class="level3">
+<h3 class="anchored" data-anchor-id="recommendations-where-patrick-should-focus">📌 Recommendations: Where Patrick Should Focus</h3>
+<ol type="1">
+<li>Shop 4 – <strong><em>Top Priority</em></strong> - Impact: Boss presence boosts productivity by <strong>+12.78 cars/day</strong>. - Why: This is the largest gain across all shops, suggesting workers here respond strongly to oversight. - Action: Prioritize consistent boss presence or structured supervision in Shop 4.</li>
+<li>Shop 2 – <strong><em>High Priority</em></strong> - Impact: Productivity rises by <strong>+10.07 cars/day</strong> with the boss. - Why: Similar to Shop 4, oversight drives significant improvement. - Action: Schedule regular boss visits or assign a deputy to maintain discipline.</li>
+<li>Shop 5 – <strong><em>Moderate Priority</em></strong> - Impact: Gains of <strong>+8.22 cars/day</strong>. - Why: Already high-performing, but boss presence amplifies output further. - Action: Patrick’s presence here should be strategic (e.g., during peak demand periods).</li>
+<li>Shop 1 – <strong><em>Lower Priority</em></strong> - Impact: Modest improvement of <strong>+6.95 cars/day</strong>. - Why: Productivity is relatively low overall, so gains are smaller in absolute terms. - Action: Consider process improvements alongside supervision.</li>
+<li>Shop 3 – <strong><em>Minimal Impact</em></strong> - Impact: Only <strong>+2.94 cars/day</strong>. - Why: Shop 3 operates steadily regardless of supervision. - Action: Patrick’s time is better spent elsewhere; focus on self-management and efficiency tools here.</li>
+</ol>
+</section>
+<section id="potential-financial-impact" class="level3">
+<h3 class="anchored" data-anchor-id="potential-financial-impact">💰 Potential Financial Impact</h3>
+<p>Let’s assume average revenue per car fixed = $500 (typical mid-range repair job).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">count</th>
-<th data-quarto-table-cell-role="th">mean</th>
-<th data-quarto-table-cell-role="th">std</th>
-<th data-quarto-table-cell-role="th">min</th>
-<th data-quarto-table-cell-role="th">max</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">shopID</th>
-<th data-quarto-table-cell-role="th">boss</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
+<th>Shop</th>
+<th>Extra Cars Fixed/Day (Patrick Present)</th>
+<th>Extra Revenue/Day</th>
+<th>Extra Revenue/Month (22 workdays)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">1</td>
-<td data-quarto-table-cell-role="th">0</td>
-<td>40</td>
-<td>11.05</td>
-<td>2.93</td>
-<td>5</td>
-<td>17</td>
+<td>Shop 4</td>
+<td>+12.78</td>
+<td>$6,390</td>
+<td>$140,580</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>10</td>
-<td>18.00</td>
-<td>3.13</td>
-<td>13</td>
-<td>23</td>
+<td>Shop 2</td>
+<td>+10.07</td>
+<td>$5,035</td>
+<td>$110,770</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">2</td>
-<td data-quarto-table-cell-role="th">0</td>
-<td>45</td>
-<td>22.13</td>
-<td>4.82</td>
-<td>11</td>
-<td>35</td>
+<td>Shop 5</td>
+<td>+8.22</td>
+<td>$4,110</td>
+<td>$90,420</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>5</td>
-<td>32.20</td>
-<td>2.59</td>
-<td>29</td>
-<td>35</td>
+<td>Shop 1</td>
+<td>+6.95</td>
+<td>$3,475</td>
+<td>$76,450</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">3</td>
-<td data-quarto-table-cell-role="th">0</td>
-<td>35</td>
-<td>32.46</td>
-<td>5.59</td>
-<td>23</td>
-<td>49</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>15</td>
-<td>35.40</td>
-<td>5.00</td>
-<td>25</td>
-<td>44</td>
-</tr>
-<tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">4</td>
-<td data-quarto-table-cell-role="th">0</td>
-<td>45</td>
-<td>37.02</td>
-<td>5.61</td>
-<td>26</td>
-<td>51</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>5</td>
-<td>49.80</td>
-<td>10.08</td>
-<td>39</td>
-<td>64</td>
-</tr>
-<tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">5</td>
-<td data-quarto-table-cell-role="th">0</td>
-<td>35</td>
-<td>45.51</td>
-<td>7.24</td>
-<td>32</td>
-<td>60</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>15</td>
-<td>53.73</td>
-<td>5.31</td>
-<td>45</td>
-<td>62</td>
+<td>Shop 3</td>
+<td>+2.94</td>
+<td>$1,470</td>
+<td>$32,340</td>
 </tr>
 </tbody>
 </table>
-
-</div>
-</div>
-</div>
+</section>
+<section id="total-potential-uplift-450000-per-month-if-the-patrick-strategically-prioritizes-shops-2-4-and-5." class="level3">
+<h3 class="anchored" data-anchor-id="total-potential-uplift-450000-per-month-if-the-patrick-strategically-prioritizes-shops-2-4-and-5.">👉 Total potential uplift = ~$450,000 per month if the Patrick strategically prioritizes Shops 2, 4, and 5.</h3>
+</section>
+<section id="strategic-takeaway" class="level3">
+<h3 class="anchored" data-anchor-id="strategic-takeaway">🎯 Strategic Takeaway</h3>
+<ul>
+<li>Patrick’s presence is a <strong>high-value</strong> lever in <strong>Shops 2</strong> and <strong>4</strong> — these should be the primary focus.</li>
+<li>Shop 5 is already strong but can deliver <strong>additional revenue</strong> when <strong>supervised</strong>.</li>
+<li>Shop 1 needs process optimization plus oversight.</li>
+<li>Shop 3 is self-sufficient; supervision here yields little ROI.</li>
+</ul>
+</section>
+</section>
+<section id="what-should-be-patricks-level-of-confidence-with-these-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="what-should-be-patricks-level-of-confidence-with-these-recommendations">What should be Patrick’s level of confidence with these recommendations?</h2>
+<p>Think of these numbers we calculated (extra cars fixed when the boss is around) like <strong>test drives</strong>. We only ran the test for <strong>50 days</strong>. That’s not a huge sample — it’s like judging a car’s reliability after just a few weeks instead of years.</p>
+<ul>
+<li><strong>The averages we saw (like +12 cars/day in Shop 4)</strong> are <strong>best guesses</strong>, not guarantees.</li>
+<li>On some days, the boss might make a <strong>big difference</strong>; on others, maybe <strong>no difference at all</strong>.</li>
+<li>The true effect could be a bit <strong>smaller</strong> or <strong>bigger</strong> than what we measured.</li>
+</ul>
+<section id="ranges-you-can-expect" class="level3">
+<h3 class="anchored" data-anchor-id="ranges-you-can-expect">📊 Ranges You Can Expect</h3>
+<p>Instead of one exact number, think of a <strong>range of possible outcomes</strong>:</p>
+<ul>
+<li><strong>Shop 4:</strong> Could be anywhere from <strong>+8 to +17 cars/day</strong>.</li>
+<li><strong>Shop 2:</strong> Likely between <strong>+6</strong> and <strong>+14 cars/day</strong>.</li>
+<li><strong>Shop 5:</strong> Around <strong>+5 to +11 cars/day</strong>.</li>
+<li><strong>Shop 1:</strong> Roughly <strong>+4 to +9 cars/day</strong>.</li>
+<li><strong>Shop 3:</strong> Very small — maybe <strong>+1 to +5 cars/day</strong>.</li>
+</ul>
+<blockquote class="blockquote">
+<p>👉 These ranges mean: if you repeat the experiment another 50 days, the numbers might shift within those bands.</p>
+</blockquote>
+</section>
+<section id="what-could-go-wrong" class="level3">
+<h3 class="anchored" data-anchor-id="what-could-go-wrong">⚠️ What Could Go Wrong</h3>
+<ul>
+<li><strong>Random luck:</strong> Maybe one day a big fleet came in, or a part shortage slowed things down. That noise can make averages look better or worse than reality.</li>
+<li><strong>Boss effect overlaps with other factors:</strong> If the boss shows up on busy days, it looks like he’s boosting productivity, but maybe it’s just more cars arriving.</li>
+<li><strong>Small sample size:</strong> 50 days sounds like a lot, but in business terms it’s short. A few unusual days can skew the results.</li>
+<li><strong>Shop differences:</strong> Each shop has its own crew, tools, and workflow. Boss presence might matter more in one shop than another, so we can’t assume the effect is identical everywhere.</li>
+</ul>
+</section>
+<section id="assumptions-were-making" class="level3">
+<h3 class="anchored" data-anchor-id="assumptions-were-making">🛠️ Assumptions We’re Making</h3>
+<ul>
+<li><strong>Revenue per car is constant</strong> (we assumed $500/job). In reality, jobs vary — oil change vs.&nbsp;engine rebuild.</li>
+<li><strong>Patrick’s presence is the only difference</strong>. We’re assuming nothing else changed (like staffing, parts supply, or customer demand).</li>
+<li><strong>Days are independent</strong>. We’re treating each day like a fresh start, but in real life yesterday’s backlog or morale can spill into today.</li>
+</ul>
+</section>
+<section id="bottom-line" class="level3">
+<h3 class="anchored" data-anchor-id="bottom-line">🚗 Bottom Line</h3>
+<p>Think of these numbers like <strong>estimates from a diagnostic tool</strong>. They point in the right direction (boss helps most in Shops 2 and 4), but they’re not exact. The real-world effect could be a bit higher or lower, and it depends on conditions.</p>
+</section>
+<section id="proposed-scheduling-scenarios-for-patrick" class="level3">
+<h3 class="anchored" data-anchor-id="proposed-scheduling-scenarios-for-patrick">Proposed Scheduling Scenario’s for Patrick</h3>
+<ul>
+<li><strong>Even Rotation:</strong> He visit’s each shop evenly</li>
+<li><strong>Priority Focus:</strong> He spends most time in Shops 4 and 2 (where his presence has the biggest effect), some in Shop 5, and little in Shops 1 and 3</li>
+<li><strong>Shop 3 Independence:</strong> He skips Shop 3 (since it barely benefits from oversight) and rotates among the other four shops.</li>
+</ul>
+<div id="41dac66b" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-3-output-1.png" width="667" height="449" class="figure-img"></p>
 </figure>
 </div>
 </div>
-</section>
-<section id="challenge-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="challenge-requirements">Challenge Requirements 📋</h2>
-<section id="minimum-requirements-for-any-points-on-challenge" class="level3">
-<h3 class="anchored" data-anchor-id="minimum-requirements-for-any-points-on-challenge">Minimum Requirements for Any Points on Challenge</h3>
-<ol type="1">
-<li><p><strong>Create a Quarto Document:</strong> Write a comprehensive quarto markdown file structured as a professional business report. Your final rendered HTML should be a polished, client-ready document that Patrick can use to make decisions. <strong>Important:</strong> Your final rendered HTML should contain only your analysis and recommendations—all challenge instructions, setup guides, and grading rubrics should be removed from the final report.</p></li>
-<li><p><strong>Render to HTML:</strong> You must render the quarto markdown file to HTML.</p></li>
-<li><p><strong>GitHub Repository:</strong> Create a repository named <code>decAdvocacyChallenge</code> in your GitHub account. Upload your rendered HTML files to this repository.</p></li>
-<li><p><strong>GitHub Pages Setup:</strong> The repository should be made the source of your GitHub Pages:</p>
-<ul>
-<li>Go to your repository settings (click the “Settings” tab in your GitHub repository)</li>
-<li>Scroll down to the “Pages” section in the left sidebar</li>
-<li>Under “Source”, select “Deploy from a branch”</li>
-<li>Choose “main” branch and “/ (root)” folder</li>
-<li>Click “Save”</li>
-<li>Your site will be available at: <code>https://[your-username].github.io/decAdvocacyChallenge/</code></li>
-<li><strong>Note:</strong> It may take a few minutes for the site to become available after enabling Pages</li>
-</ul></li>
-</ol>
-</section>
-</section>
-<section id="getting-started-repository-setup" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started-repository-setup">Getting Started: Repository Setup 🚀</h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-📁 Quick Start
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Step 1:</strong> Create a new repository named <code>decAdvocacyChallenge</code> in your GitHub account by forking the starter repository at <a href="https://github.com/flyaflya/decAdvocacyChallenge.git">https://github.com/flyaflya/decAdvocacyChallenge.git</a></p>
-<p><strong>Step 2:</strong> Clone the repository locally using Cursor (or VS Code)</p>
-<p><strong>Step 3:</strong> The data file <code>carsFixed.csv</code> is already included in this repository. The code will load it from the local file.</p>
-<p><strong>Step 4:</strong> You’re ready to start! Modify this <code>index.qmd</code> file and begin your analysis.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-💡 Why This Approach?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Benefits:</strong></p>
-<ul>
-<li><strong>Real-world application:</strong> You’re solving an actual business problem</li>
-<li><strong>Data-driven insights:</strong> Learn to extract actionable insights from data</li>
-<li><strong>Professional presentation:</strong> Create a report that a real client would use</li>
-<li><strong>Visual storytelling:</strong> Master the art of data visualization for decision-making</li>
-</ul>
-</div>
 </div>
 </section>
-<section id="grading-rubric" class="level2">
-<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric 🎓</h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-📊 What You’re Really Being Graded On
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>This is a report for Patrick, an auto-mechanic, not a statistics professor.</strong> Your job is to give him clear, actionable advice he can understand and use. Think of this as a brief consultation report—something he can read in 5 minutes and immediately know what to do.</p>
-<p><strong>Report Format:</strong></p>
+<section id="scheduling-impact" class="level3">
+<h3 class="anchored" data-anchor-id="scheduling-impact">Scheduling Impact</h3>
 <ul>
-<li><strong>Conciseness:</strong> Aim for 1-5 printed pages. Patrick is busy—get to the point quickly.</li>
-<li><strong>Simplicity:</strong> Write so an auto-mechanic can understand. Avoid jargon. Use plain language.</li>
-<li><strong>Delete All Challenge Instructions:</strong> Once you’ve completed your analysis, remove all challenge instructions, setup guides, and grading rubrics from your final rendered HTML. The final report should contain only your analysis, visualizations, and recommendations—nothing else.</li>
-<li><strong>Hidden Code:</strong> Tell a narrative and visual story, but hide your code (the code can be referenced in your github *.qmd source file if needed).</li>
-<li><strong>Show All Data Points:</strong> When plotting historical data, display all 250 observations (not just summaries). Use transparency, jitter, or other techniques to handle overlapping points.</li>
-</ul>
-<p><strong>What makes a great report:</strong></p>
-<ul>
-<li><strong>Beautiful visualizations:</strong> Clean, clear charts that tell the story at a glance</li>
-<li><strong>Logical recommendations:</strong> Defensible advice based on the data, not speculation</li>
-<li><strong>Confidence assessment:</strong> Explain uncertainty in plain terms. What ranges of differences can Patrick expect? How confident can he be? (Remember: we only have 250 days of data—that’s not a lot.)</li>
-<li><strong>Punchy and focused:</strong> Don’t bore Patrick with unnecessary analysis. Focus on what matters for his decision.</li>
-</ul>
-<p><strong>What we’re looking for:</strong> A report Patrick can read, understand, and act on. If he’s confused or bored, you’ve missed the mark.</p>
-</div>
-</div>
-<section id="what-your-report-should-include" class="level3">
-<h3 class="anchored" data-anchor-id="what-your-report-should-include">What Your Report Should Include</h3>
-<p>Your report should answer these questions in a clear, concise way:</p>
-<ol type="1">
-<li><p><strong>What does the data show?</strong></p>
-<ul>
-<li>Visualize all 250 data points showing productivity by shop and boss presence</li>
-<li>Which shops benefit most from Patrick’s presence? Which don’t?</li>
-</ul></li>
-<li><p><strong>What should Patrick do?</strong></p>
-<ul>
-<li>Clear, specific recommendations: Which shops should he prioritize? Why?</li>
-<li>What’s the potential financial impact? (Revenue or profit implications)</li>
-</ul></li>
-<li><p><strong>How confident can Patrick be?</strong></p>
-<ul>
-<li>Explain uncertainty in plain terms an auto-mechanic can understand</li>
-<li>What ranges of differences can he expect? (We only have 250 days—that’s not a huge sample)</li>
-<li>What could go wrong? What assumptions are you making?</li>
-</ul></li>
-<li><p><strong>What does the future look like?</strong></p>
-<ul>
-<li>Show at least one visualization of projected outcomes under different scheduling scenarios</li>
-<li>Help Patrick see the potential impact of following your recommendations</li>
-</ul></li>
-</ol>
-<p><strong>Remember:</strong> Less is more. A focused, punchy report that Patrick can understand and act on is better than a long, complex analysis that confuses him.</p>
-</section>
-</section>
-<section id="technical-implementation-preferences" class="level2">
-<h2 class="anchored" data-anchor-id="technical-implementation-preferences">Technical Implementation Preferences 💡</h2>
-<section id="setting-up-your-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="setting-up-your-analysis">Setting Up Your Analysis</h3>
-<ul>
-<li>Use <code>pandas</code> for data manipulation</li>
-<li>Use <code>matplotlib</code> and <code>seaborn</code> for visualizations</li>
-<li>Use <code>numpy</code> for numerical calculations if needed</li>
-<li>Consider using <code>scipy</code> for statistical tests if helpful</li>
+<li><strong>Even Rotation:</strong> Productivity improves moderately everywhere, but the total uplift is spread thin.</li>
+<li><strong>Priority Focus:</strong> This scenario delivers the <strong>highest overall productivity</strong>.</li>
+<li><strong>Shop 3 Independence:</strong> This yields strong gains while freeing up time.</li>
 </ul>
 </section>
-<section id="visualization-preferences" class="level3">
-<h3 class="anchored" data-anchor-id="visualization-preferences">Visualization Preferences</h3>
+</section>
+<section id="recommendations-for-patrick" class="level2">
+<h2 class="anchored" data-anchor-id="recommendations-for-patrick">Recommendations for Patrick</h2>
 <ul>
-<li><strong>Professional Styling:</strong> Use consistent colors, clear labels, readable fonts, and informative titles</li>
-<li><strong>Show All Points:</strong> When displaying historical data, ensure all 250 observations are visible (use transparency, jitter, or other techniques)</li>
-<li><strong>Color Coding:</strong> Use consistent color schemes (e.g., one color for boss present, another for boss absent)</li>
-<li><strong>Interactive Elements:</strong> Consider using plotly for interactive visualizations if helpful (optional)</li>
+<li><strong>He should prioritize Shops 4 and 2</strong>. These shops show the largest productivity boost when supervised.</li>
+<li><strong>Shop 5 is a secondary focus</strong>. Already strong, but supervision adds extra cars fixed.</li>
+<li><strong>Shop 3 can run independently</strong>. His time here doesn’t pay off much.</li>
+<li><strong>Shop 1 benefits modestly</strong>. Oversight helps, but process improvements may matter more.</li>
 </ul>
-</section>
-<section id="data-loading" class="level3">
-<h3 class="anchored" data-anchor-id="data-loading">Data Loading</h3>
-<p>The data file <code>carsFixed.csv</code> is included in your repository. Load it using pandas:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>carsDF <span class="op">=</span> pd.read_csv(<span class="st">"carsFixed.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="submission-checklist" class="level2">
-<h2 class="anchored" data-anchor-id="submission-checklist">Submission Checklist ✅</h2>
-<p><strong>Technical Requirements:</strong></p>
-<ul class="task-list">
-<li><label><input type="checkbox">Forked repository <code>decAdvocacyChallenge</code> from the starter repository</label></li>
-<li><label><input type="checkbox">Cloned repository locally using Cursor (or VS Code)</label></li>
-<li><label><input type="checkbox">Quarto document created with clear narrative (use this <code>index.qmd</code> as a starting point)</label></li>
-<li><label><input type="checkbox">Document rendered to HTML successfully</label></li>
-<li><label><input type="checkbox">HTML files uploaded to your repository</label></li>
-<li><label><input type="checkbox">GitHub Pages enabled and working</label></li>
-<li><label><input type="checkbox">Site accessible at <code>https://[your-username].github.io/decAdvocacyChallenge/</code></label></li>
-</ul>
-<p><strong>Report Quality Requirements:</strong></p>
-<ul class="task-list">
-<li><label><input type="checkbox"><strong>Conciseness:</strong> Report is 1-5 printed pages (not a novel)</label></li>
-<li><label><input type="checkbox"><strong>Simplicity:</strong> Written so an auto-mechanic can understand (no unnecessary jargon)</label></li>
-<li><label><input type="checkbox"><strong>Beautiful visualizations:</strong> Clean, clear charts that tell the story with persuasive titles, meaningful labels, and useful annotations.</label></li>
-<li><label><input type="checkbox"><strong>All 250 data points visible:</strong> Historical data shows all observations, not just summaries (on one of the visualizations)</label></li>
-<li><label><input type="checkbox"><strong>Logical recommendations:</strong> Defensible advice based on the data</label></li>
-<li><label><input type="checkbox"><strong>Confidence assessment:</strong> Uncertainty explained in plain terms Patrick can understand</label></li>
-<li><label><input type="checkbox"><strong>Future scenarios:</strong> At least one visualization showing projected outcomes</label></li>
-<li><label><input type="checkbox"><strong>Clean final report:</strong> All challenge instructions, setup guides, and grading rubrics removed from final HTML</label></li>
-<li><label><input type="checkbox"><strong>Hidden code:</strong> Code is hidden in final report (must be in source .qmd file)</label></li>
-</ul>
-<section id="resources" class="level3">
-<h3 class="anchored" data-anchor-id="resources">Resources</h3>
-<ul>
-<li><strong>Quarto Markdown:</strong> <a href="https://quarto.org/docs/authoring/markdown-basics.html">quarto.org/docs/authoring/markdown-basics.html</a></li>
-<li><strong>Quarto Documentation:</strong> <a href="https://quarto.org/docs">quarto.org/docs</a></li>
-<li><strong>Python Data Science Handbook:</strong> <a href="https://jakevdp.github.io/PythonDataScienceHandbook">jakevdp.github.io/PythonDataScienceHandbook</a></li>
-<li><strong>Pandas Documentation:</strong> <a href="https://pandas.pydata.org/docs">pandas.pydata.org/docs</a></li>
-<li><strong>Matplotlib Gallery:</strong> <a href="https://matplotlib.org/stable/gallery">matplotlib.org/stable/gallery</a></li>
-<li><strong>Seaborn Tutorial:</strong> <a href="https://seaborn.pydata.org/tutorial.html">seaborn.pydata.org/tutorial.html</a></li>
-</ul>
-</section>
+<section id="financial-impact" class="level3">
+<h3 class="anchored" data-anchor-id="financial-impact">Financial Impact</h3>
+<div id="70a64d6d" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" width="688" height="463" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>If each car fixed brings in ~$500 revenue: - <strong>Priority Focus scenario</strong> could generate <strong>tens of thousands more per month</strong> compared to even rotation. - By concentrating on Shops 2 and 4, Patrick maximizes his return on time invested. This visualization makes it clear: <strong>smart scheduling beats equal scheduling</strong>.</p>
+</blockquote>
 </section>
 </section>
 
@@ -633,13 +374,14 @@ Table&nbsp;2: Summary statistics by shop and boss presence
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
