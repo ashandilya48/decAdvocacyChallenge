@@ -101,7 +101,10 @@ sns.barplot(
     x="shopID",
     y="carsFixed",
     hue="boss",
-    palette="Set2"
+    palette={
+        1: "seagreen",   # Patrick present
+        0: "yellow"      # Not present
+    }
 )
 plt.title("Average Productivity by Shop and Patrick's Presence")
 plt.xlabel("Shop ID")
